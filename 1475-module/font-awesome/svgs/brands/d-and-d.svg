@@ -1,0 +1,124 @@
+k)
+      return;
+
+    if (!response) {
+      // When the response is missing, runtime.lastError has already been set.
+      // See chrome/browser/extensions/api/tab_capture/tab_capture_api.cc.
+      callback(null);
+      return;
+    }
+
+    // Convenience function for processing webkitGetUserMedia() error objects to
+    // provide runtime.lastError messages for the tab capture API.
+    function getErrorMessage(error, fallbackMessage) {
+      if (!error || (typeof error.message != 'string'))
+        return fallbackMessage;
+      return error.message.replace(/(navigator\.)?(webkit)?GetUserMedia/gi,
+                                   name);
+    }
+
+    var options = {};
+    if (response.audioConstraints)
+      options.audio = response.audioConstraints;
+    if (response.videoConstraints)
+      options.video = response.videoConstraints;
+    try {
+      navigator.webkitGetUserMedia(
+          options,
+          function onSuccess(media_stream) {
+            callback(media_stream);
+          },
+          function onError(error) {
+            runCallbackWithLastError(
+                name,
+                getErrorMessage(error, "Failed to start MediaStream."),
+                request.stack,
+                function() { callback(null); });
+          });
+    } catch (error) {
+      runCallbackWithLastError(
+          name, getErrorMessage(error, "Invalid argument(s)."), request.stack,
+          function() { callback(null); });
+    }
+  }
+
+  apiFunctions.setCustomCallback('capture', proxyToGetUserMedia);
+  apiFunctions.setCustomCallback('captureOffscreenTab', proxyToGetUserMedia);
+});
+
+if (!apiBridge)
+  exports.$set('binding', binding.generate());
+// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+//
+// Modified by Opera Software AS
+// @copied-from chromium/src/chrome/renderer/resources/extensions/tabs_custom_bindings.js NOLINT
+// @last-synchronized ff985443d538d4117ed77809f9d891c29acf7af8
+
+// Custom binding for the tabs API.
+
+var binding = apiBridge || require('binding').Binding.create('tabs');
+
+var messaging = require('messaging');
+var OpenChannelToTab = requireNative('messaging_natives').OpenChannelToTab;
+var sendRequestIsDisabled = requireNative('process').IsSendRequestDisabled();
+var forEach = require('utils').forEach;
+var setIcon = require('setIcon').setIcon;
+var sendRequest = require('sendRequest').sendRequest;
+
+binding.registerCustomHook(function(bindingsAPI, extensionId) {
+  var apiFunctions = bindingsAPI.apiFunctions;
+  var tabs = bindingsAPI.compiledApi;
+
+  apiFunctions.setHandleRequest('connect', function(tabId, connectInfo) {
+    var name = '';
+    var frameId = -1;
+    if (connectInfo) {
+      name = connectInfo.name || name;
+      frameId = connectInfo.frameId;
+      if (typeof frameId == 'undefined' || frameId < 0)
+        frameId = -1;
+    }
+    var portId = OpenChannelToTab(tabId, frameId, extensionId, name);
+    return messaging.createPort(portId, name);
+  });
+
+  apiFunctions.setHandleRequest('sendRequest',
+                                function(tabId, request, responseCallback) {
+    if (sendRequestIsDisabled)
+      throw new Error(sendRequestIsDisabled);
+    var port = tabs.connect(tabId, {name: messaging.kRequestChannel});
+    messaging.sendMessageImpl(port, request, responseCallback);
+  });
+
+  apiFunctions.setHandleRequest('sendMessage',
+      function(tabId, message, options, responseCallback) {
+    var connectInfo = {
+      name: messaging.kMessageChannel
+    };
+    if (options) {
+      forEach(options, function(k, v) {
+        connectInfo[k] = v;
+      });
+    }
+
+    var port = tabs.connect(tabId, connectInfo);
+    messaging.sendMessageImpl(port, message, responseCallback);
+  });
+
+  apiFunctions.setHandleRequest('create', function(details, callback) {
+    if (details.favIconOverride &&
+        (details.favIconOverride.imageData || details.favIconOverride.path)) {
+      var detailsCopy = JSON.parse(JSON.stringify(details));
+      setIcon(detailsCopy.favIconOverride, function (args) {
+         detailsCopy.favIconOverride.imageData = args.imageData;
+        sendRequest(this.name, [detailsCopy, callback], this.definition.parameters);      }.bind(this));
+    } else {
+      sendRequest(this.name, [details, callback], this.definition.parameters);
+    }
+  });
+
+  apiFunctions.setHandleRequest('update', function(id, details, callback) {
+    if (details.favIconOverride &&
+        (details.favIconOverride.imageData ||

@@ -1,0 +1,32 @@
+nfig.validate = function(messageValidator, offset) {
+    var err;
+    err = messageValidator.validateStructHeader(offset, codec.kStructHeaderSize);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    var kVersionSizes = [
+      {version: 0, numBytes: 16}
+    ];
+    err = messageValidator.validateStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+
+
+
+    return validator.validationError.NONE;
+  };
+
+  MediaRouteProviderConfig.encodedSize = codec.kStructHeaderSize + 8;
+
+  MediaRouteProviderConfig.decode = function(decoder) {
+    var packed;
+    var val = new MediaRouteProviderConfig();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    packed = decoder.readUint8();
+    val.enableDialDiscovery = (packed >> 0) & 1 ? true : false;
+    val.enableCastDiscovery = (packed >> 1) & 1 ? true : false;
+    val.enableDialSinkQuery = (packed >> 2) & 1 ? true : false;
+    val.enableCastSinkQuery = 

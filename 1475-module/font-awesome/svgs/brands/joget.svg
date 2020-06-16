@@ -1,0 +1,19 @@
+dMessageToSink = function() {
+    return MirrorServiceRemoterProxy.prototype.sendMessageToSink
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MirrorServiceRemoterProxy.prototype.sendMessageToSink = function(message) {
+    var params_ = new MirrorServiceRemoter_SendMessageToSink_Params();
+    params_.message = message;
+    var builder = new codec.MessageV0Builder(
+        kMirrorServiceRemoter_SendMessageToSink_Name,
+        codec.align(MirrorServiceRemoter_SendMessageToSink_Params.encodedSize));
+    builder.encodeStruct(MirrorServiceRemoter_SendMessageToSink_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MirrorServiceRemoterPtr.prototype.estimateTransmissionCapacity = function() {
+    return MirrorServiceRemoterProxy.prototype.estimateTransmissionCapacity
+        .apply(this.ptr.getProxy(), arguments);
+  };

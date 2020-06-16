@@ -1,0 +1,27 @@
+er_TerminateRoute_ResponseParams.encodedSize),
+            codec.kMessageIsResponse, reader.requestID);
+        builder.encodeStruct(MediaRouteProvider_TerminateRoute_ResponseParams,
+                             responseParams);
+        var message = builder.finish();
+        responder.accept(message);
+      });
+      return true;
+    case kMediaRouteProvider_SendRouteMessage_Name:
+      var params = reader.decodeStruct(MediaRouteProvider_SendRouteMessage_Params);
+      this.sendRouteMessage(params.mediaRouteId, params.message).then(function(response) {
+        var responseParams =
+            new MediaRouteProvider_SendRouteMessage_ResponseParams();
+        responseParams.sent = response.sent;
+        var builder = new codec.MessageV1Builder(
+            kMediaRouteProvider_SendRouteMessage_Name,
+            codec.align(MediaRouteProvider_SendRouteMessage_ResponseParams.encodedSize),
+            codec.kMessageIsResponse, reader.requestID);
+        builder.encodeStruct(MediaRouteProvider_SendRouteMessage_ResponseParams,
+                             responseParams);
+        var message = builder.finish();
+        responder.accept(message);
+      });
+      return true;
+    case kMediaRouteProvider_SendRouteBinaryMessage_Name:
+      var params = reader.decodeStruct(MediaRouteProvider_SendRouteBinaryMessage_Params);
+      this.sendRoute

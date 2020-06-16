@@ -1,0 +1,71 @@
+$size30: 30px;
+$font-normal: 14px;
+$fe9: #fe9c00;
+$fff: #fff;
+
+%button {
+    border: 1px solid black;
+    background-color: white;
+    font-size: 10px;
+    padding: 7px 10px 7px 10px;
+  }
+
+.mini-cart{
+    position: relative;
+    background: $fff;
+    border-color: $fff;
+    float: right;
+
+    .icon-cart{
+        border: medium none;
+        height: 45px;
+        left: 0;
+        width: 50px;
+    }
+
+    .content-mini-cart{
+        background: $fff;
+        box-shadow: 0 3px 4px -1px rgba(0,0,0,0.2);
+        margin-top: 30px;
+        padding: 5px 20px;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        -webkit-transition: all 0.3s ease-out 0s;
+        transition: all 0.3s ease-out 0s;
+        width: 289px;
+        z-index: 9999;
+        opacity:0;
+        visibility: hidden; 
+
+        h2{
+            font-size:14px;
+        }
+        .size{
+            font-size: 12px;
+            color: grey;
+        }
+        .qty-price{
+            font-size: 12px;
+            font-weight: bold;
+            color: grey;
+        }
+        .subtotal{
+            margin: 15px 0 15px 0;
+        }
+        button{
+            @extend %button;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+        }
+    }
+}
+
+.mini-cart:hover{
+    .content-mini-cart{
+        opacity: 1;
+        visibility: visible;
+    }
+}

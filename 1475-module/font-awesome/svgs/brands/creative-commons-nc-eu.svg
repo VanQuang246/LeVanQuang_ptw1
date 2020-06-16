@@ -1,0 +1,29 @@
+pose, reverse relation to expose.
+var nodeRefListAttributes = [
+    ['controlsIds', 'controls', 'controlledBy'],
+    ['describedbyIds', 'describedBy', 'descriptionFor'],
+    ['flowtoIds', 'flowTo', 'flowFrom'],
+    ['labelledbyIds', 'labelledBy', 'labelFor']];
+
+var floatAttributes = [
+    'valueForRange',
+    'minValueForRange',
+    'maxValueForRange'];
+
+var htmlAttributes = [
+    ['type', 'inputType']];
+
+var publicAttributes = [];
+
+$Array.forEach(stringAttributes, function(attributeName) {
+  $Array.push(publicAttributes, attributeName);
+  $Object.defineProperty(AutomationNodeImpl.prototype, attributeName, {
+    __proto__: null,
+    get: function() {
+      return GetStringAttribute(this.treeID, this.id, attributeName);
+    }
+  });
+});
+
+$Array.forEach(boolAttributes, function(attributeName) {
+  $Array.push(publicA

@@ -1,0 +1,25 @@
+ram {string} attr The name of an attribute.
+ * @return {?Array<number>} The ids of nodes who have a relationship pointing
+ *     to |nodeID| (a reverse relationship).
+ */
+var GetIntListAttributeReverseRelations =
+    natives.GetIntListAttributeReverseRelations;
+
+/**
+ * @param {number} axTreeID The id of the accessibility tree.
+ * @param {number} nodeID The id of a node.
+ * @param {string} attr The name of an HTML attribute.
+ * @return {?string} The value of this attribute, or undefined if the tree,
+ *     node, or attribute wasn't found.
+ */
+var GetHtmlAttribute = natives.GetHtmlAttribute;
+
+/**
+ * @param {number} axTreeID The id of the accessibility tree.
+ * @param {number} nodeID The id of a node.
+ * @return {automation.NameFromType} The source of the node's name.
+ */
+var GetNameFrom = natives.GetNameFrom;
+
+/**
+ * @param {

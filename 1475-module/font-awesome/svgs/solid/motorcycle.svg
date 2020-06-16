@@ -1,0 +1,30 @@
+,3.3,3.3);
+
+	this.instance_4 = new lib.MCcircle();
+	this.instance_4.parent = this;
+	this.instance_4.setTransform(16.3,3.2,0.212,0.212,0,0,0,3.3,3.6);
+
+	this.instance_5 = new lib.MCcircle();
+	this.instance_5.parent = this;
+	this.instance_5.setTransform(4.4,1.1,0.212,0.212,0,0,0,3.3,3.6);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.MCzwiezdy, new cjs.Rectangle(0.4,0.3,19.9,17), null);
+
+
+(lib.MCzwielzdyL = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.instance = new lib.MCcircle();
+	this.instance.parent = this;
+	this.instance.setTransform(13,11.7,0.233,0.233,0,0,0,4.3,4.1);
+
+	this.instance_1 = new lib.MCcircle();
+	this.instance_1.parent = this;
+	this.instance_1.setTransform(1,17.2,0.233,0.233,0,0,0,4.3,4.1);
+
+	this.instance_2 = new lib.MCcircle();
+	this.instance_2.parent = this;
+	this.instance_2.setTransform(12.6,0.8,0.233,0.233,0,0,0,4.3,4.1);

@@ -1,0 +1,23 @@
+edPtr(associatedInterfacePtrInfo) {
+    this.ptr = new associatedBindings.AssociatedInterfacePtrController(
+        HangoutsMediaRouteController, associatedInterfacePtrInfo);
+  }
+
+  HangoutsMediaRouteControllerAssociatedPtr.prototype =
+      Object.create(HangoutsMediaRouteControllerPtr.prototype);
+  HangoutsMediaRouteControllerAssociatedPtr.prototype.constructor =
+      HangoutsMediaRouteControllerAssociatedPtr;
+
+  function HangoutsMediaRouteControllerProxy(receiver) {
+    this.receiver_ = receiver;
+  }
+  HangoutsMediaRouteControllerPtr.prototype.setLocalPresent = function() {
+    return HangoutsMediaRouteControllerProxy.prototype.setLocalPresent
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  HangoutsMediaRouteControllerProxy.prototype.setLocalPresent = function(localPresent) {
+    var params_ = new HangoutsMediaRouteController_SetLocalPresent_Params();
+    params_.localPresent = localPresent;
+    var builder = new codec.MessageV0Builder(
+        k

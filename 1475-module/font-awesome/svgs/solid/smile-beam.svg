@@ -1,0 +1,19 @@
+1D1E").s().p("AgWAXQgKgJAAgOQAAgNAKgJQAJgKANAAQAOAAAJAKQAKAJAAANQAAAOgKAJQgJAKgOAAQgNAAgJgKg");
+	this.shape.setTransform(3.3,3.3);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.MCcircle, new cjs.Rectangle(0,0,6.6,6.6), null);
+
+
+(lib.MCcircl = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#191D1E").s().p("AhBBCQgcgbAAgnQAAgmAcgbQAbgcAmAAQAnAAAbAcQAcAbAAAmQAAAngcAbQgbAcgnAAQgmAAgbgcg");
+	this.shape.setTransform(9.4,9.4);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+}).prototype = getMCS

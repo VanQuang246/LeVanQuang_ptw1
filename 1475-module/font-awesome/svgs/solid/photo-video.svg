@@ -1,0 +1,12 @@
+p("Al5BaIBzjaICQAlIDEhBIBZDaIk5BfIAcj4IgcD4gACnA+IhZjaICNAYICfDVgACnA+g");
+	this.shape_250.setTransform(77.5,94.7);
+
+	this.shape_251 = new cjs.Shape();
+	this.shape_251.graphics.f().s("#1A1A1A").ss(1,1,1).p("ACoAvIDSAcIiijLIiOgfgAh5hOIiOguIhyDRIDoBLAh5hOIgYDuIE5hxABKifIjDBR");
+	this.shape_251.setTransform(78.1,91.8);
+
+	this.shape_252 = new cjs.Shape();
+	this.shape_252.graphics.f("#FFFFFF").s().p("Al5BUIByjQICOAuIgYDvgAh5hOIDDhSIBeDPIhejPICOAgICiDLIjSgcIk5BygAh5hOg");
+	this.shape_252.setTransform(78.1,91.8);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_37},{t:this.shape_36}]}).to({state:[{t:this.shape_39},{t:this.shape_38

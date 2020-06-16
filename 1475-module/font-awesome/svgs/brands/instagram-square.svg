@@ -1,0 +1,28 @@
+dateMediaStatusObserverRequest(messageValidator) {
+    var message = messageValidator.message;
+    var paramsClass = null;
+    switch (message.getName()) {
+      case kMediaStatusObserver_OnMediaStatusUpdated_Name:
+        if (!message.expectsResponse() && !message.isResponse())
+          paramsClass = MediaStatusObserver_OnMediaStatusUpdated_Params;
+      break;
+    }
+    if (paramsClass === null)
+      return validator.validationError.NONE;
+    return paramsClass.validate(messageValidator, messageValidator.message.getHeaderNumBytes());
+  }
+
+  function validateMediaStatusObserverResponse(messageValidator) {
+    return validator.validationError.NONE;
+  }
+
+  var MediaStatusObserver = {
+    name: 'media_router::mojom::MediaStatusObserver',
+    kVersion: 0,
+    ptrClass: MediaStatusObserverPtr,
+    proxyClass: MediaStatusObserverProxy,
+    stubClass: MediaStatusObserverStub,
+    validateRequest: validateMediaStatusObserverRequest,
+    validateResponse: null,
+  };
+  MediaStatusObserverStub.prototype.validator = validateMediaS

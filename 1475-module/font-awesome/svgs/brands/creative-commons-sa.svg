@@ -1,0 +1,11 @@
+ind(function() {
+        return this.weakWrapper(function() {
+          if (!this.contextMenusOnClickedEvent_) {
+            var eventName = 'chromeWebViewInternal.onClicked';
+            var eventSchema =
+                utils.lookup(ChromeWebViewSchema.events, 'name', 'onClicked');
+            var eventOptions =
+                {supportsListeners: true, supportsLazyListeners: false};
+            var onClickedEvent = createContextMenusOnClickedEvent(
+                this.viewInstanceId, eventName, eventSchema, eventOptions);
+            this.contextMenusOnClickedEvent_ = onClick

@@ -1,0 +1,14 @@
+t('isElementBlocked', function(element) {
+    return contentFilterPrivateNatives.isElementBlocked(location.href, element);
+  });
+  apiFunctions.setHandleRequest('isURLBlocked', function(element) {
+    return contentFilterPrivateNatives.isURLBlocked(location.href, element);
+  });
+  apiFunctions.setHandleRequest('getBlockedSelectors', function() {
+    var args = $Array.slice(arguments);
+    sendRequest(this.name, args, this.definition.parameters,
+                {__proto__: null, forIOThread: true});
+  });
+  apiFunctions.setCustomCallback(
+      'testLoading', function(name, request, callback, blobInfo, duration) {
+        // Might be undefined if API trigerrs

@@ -1,0 +1,114 @@
+.new-incomes {
+  display: flex;
+  position: relative; }
+  .new-incomes .show-more {
+    font-size: 12px;
+    font-weight: 500;
+    color: grey;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin: 20px 20px;
+    padding: 5px 20px;
+    width: 120px; }
+  .new-incomes .show-more:hover {
+    color: black; }
+  .new-incomes .click-slice {
+    position: relative; }
+    .new-incomes .click-slice .swiper-button-next {
+      right: -875px; }
+    .new-incomes .click-slice .swiper-button-prev {
+      left: 800px; }
+  .new-incomes .swiper-container {
+    width: 100%;
+    height: 100%; }
+  .new-incomes .swiper-slide {
+    text-align: center;
+    width: 233.8px;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center; }
+
+[class^=imghvr-] figcaption {
+  background: #fff;
+  padding: 0; }
+
+.info {
+  text-align: center; }
+
+.icon {
+  position: relative; }
+  .icon .heart {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 16px;
+    z-index: 2;
+    display: block;
+    float: right;
+    max-width: 22px;
+    padding: 0 32px 0 0;
+    box-sizing: border-box;
+    -webkit-transition: max-width 0.4s ease-in-out;
+    background-color: #bca9a3; }
+    .icon .heart i {
+      position: absolute;
+      font-size: 20px;
+      line-height: 32px;
+      color: #fff;
+      margin: 0;
+      top: 2px;
+      left: 6px;
+      width: 100%; }
+
+.buy {
+  position: relative; }
+  .buy .shopping-bag {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 16px;
+    z-index: 2;
+    display: block;
+    float: right;
+    max-width: 22px;
+    padding: 0 32px 0 0;
+    box-sizing: border-box;
+    -webkit-transition: max-width 0.4s ease-in-out;
+    background-color: #bca9a3;
+    float: right; }
+    .buy .shopping-bag i {
+      position: absolute;
+      font-size: 20px;
+      line-height: 32px;
+      color: #fff;
+      margin: 0;
+      top: 2px;
+      left: 5px;
+      width: 100%;
+      display: flex; }
+      .buy .shopping-bag i p {
+        color: white;
+        font-size: 12px;
+        margin-left: 10px;
+        display: none; }
+  .buy .shopping-bag:hover {
+    padding-left: 80px;
+    transition: 0.5s ease-in-out; }
+    .buy .shopping-bag:hover p {
+      display: block;
+      transition: 0.5s ease-in-out; }

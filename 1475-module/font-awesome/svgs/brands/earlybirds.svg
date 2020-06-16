@@ -1,0 +1,57 @@
+Union(offset + codec.kStructHeaderSize + 40, MediaSinkExtraData, true);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    return validator.validationError.NONE;
+  };
+
+  MediaSink.encodedSize = codec.kStructHeaderSize + 56;
+
+  MediaSink.decode = function(decoder) {
+    var packed;
+    var val = new MediaSink();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    val.sinkId = decoder.decodeStruct(codec.String);
+    val.name = decoder.decodeStruct(codec.String);
+    val.description = decoder.decodeStruct(codec.NullableString);
+    val.domain = decoder.decodeStruct(codec.NullableString);
+    val.iconType = decoder.decodeStruct(codec.Int32);
+    val.providerId = decoder.decodeStruct(codec.Int32);
+    val.extraData = decoder.decodeStruct(MediaSinkExtraData);
+    return val;
+  };
+
+  MediaSink.encode = function(encoder, val) {
+    var packed;
+    encoder.writeUint32(MediaSink.encodedSize);
+    encoder.writeUint32(0);
+    encoder.encodeStruct(codec.String, val.sinkId);
+    encoder.encodeStruct(codec.String, val.name);
+    encoder.encodeStruct(codec.NullableString, val.description);
+    encoder.encodeStruct(codec.NullableString, val.domain);
+    encoder.encodeStruct(codec.Int32, val.iconType);
+    encoder.encodeStruct(codec.Int32, val.providerId);
+    encoder.encodeStruct(MediaSinkExtraData, val.extraData);
+  };
+  function DialMediaSink(values) {
+    this.initDefaults_();
+    this.initFields_(values);
+  }
+
+
+  DialMediaSink.prototype.initDefaults_ = function() {
+    this.ipAddress = null;
+    this.modelName = null;
+    this.appUrl = null;
+  };
+  DialMediaSink.prototype.initFields_ = function(fields) {
+    for(var field in fields) {
+        if (this.hasOwnProperty(field))
+          this[field] = fields[field];
+    }
+  };
+
+  DialMediaSink.validate = function(messageValidator, offset) {
+    var err;
+    err = messageValidator.validateStructHeader(o

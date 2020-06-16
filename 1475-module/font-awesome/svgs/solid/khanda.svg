@@ -1,0 +1,94 @@
+ia screen and (min-width: 700px) {
+  body {
+    align-items: center;
+    display: flex;
+  }
+
+  .content {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .illustration {
+    margin-top: 0px;
+  }
+
+  .description {
+    margin-top: 20px;
+    width: 30em;
+  }
+
+  #animation {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 699px) and (max-height: 480px) {
+  .content {
+    margin-top: 50px;
+  }
+}
+
+@media all and (min-width: 600px) and (max-width: 666px) {
+  .web-search-logo {
+    display: inline !important;
+  }
+
+  .web-search .suggestion-input-container {
+    margin-left: 20px !important;
+  }
+}
+
+.button {
+  background-position: 12px center;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 42px;
+  margin: 0 24px 24px 0;
+  padding: 0 36px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.button.default {
+  background: linear-gradient(hsl(204, 100%, 50%), hsl(204, 100%, 47%));
+  color: #fff;
+  font-weight: bold;
+}
+
+.button svg {
+  margin: -2px 4px 0 -4px;
+  vertical-align: middle;
+}
+
+.button.secondary {
+  background: #fff;
+  box-shadow:  0 0 0 1px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1);
+  color: #666;
+}
+
+.button:hover,
+.button:focus {
+  background: linear-gradient(hsl(204, 100%, 40%), hsl(204, 100%, 40%));
+}
+
+.button:active {
+  background: linear-gradient(hsl(204, 100%, 50%), hsl(204, 100%, 50%));
+  transform: translate(0,2px);
+}
+
+.button.secondary:hover,
+.button.secondary:focus,
+.button.secondary:active {
+  background: #eee;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  

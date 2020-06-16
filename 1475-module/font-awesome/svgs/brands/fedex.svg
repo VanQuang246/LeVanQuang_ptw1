@@ -1,0 +1,27 @@
+ld in fields) {
+        if (this.hasOwnProperty(field))
+          this[field] = fields[field];
+    }
+  };
+
+  MediaRouteProvider_JoinRoute_ResponseParams.validate = function(messageValidator, offset) {
+    var err;
+    err = messageValidator.validateStructHeader(offset, codec.kStructHeaderSize);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    var kVersionSizes = [
+      {version: 0, numBytes: 32}
+    ];
+    err = messageValidator.validateStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouteProvider_JoinRoute_ResponseParams.route
+    err = messageValidator.validateStructPointer(offset + codec.kStructHeaderSize + 0, MediaRoute, true);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+   

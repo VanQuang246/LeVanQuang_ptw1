@@ -1,0 +1,7 @@
+ddTween(cjs.Tween.get(this.shape_85).wait(3).to({_off:false},0).to({_off:true},1).wait(34).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(30).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(2));
+	this.timeline.addTween(cjs.Tween.get(this.shape_86).wait(4).to({_off:false},0).to({_off:true},1).wait(34).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(30).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.shape_87).wait(5).to({_off:false},0).to({_off:true},1).wait(34).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(30).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).wait(1));
+
+	// noga-2
+	this.shape_107 = new cjs.Shape();
+	this.shape_107.graphics.f().s("#191D1E").ss(1,1,1)

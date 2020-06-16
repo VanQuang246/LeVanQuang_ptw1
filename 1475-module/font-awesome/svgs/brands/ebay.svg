@@ -1,0 +1,39 @@
+erty(field))
+          this[field] = fields[field];
+    }
+  };
+
+  CastMediaSink.validate = function(messageValidator, offset) {
+    var err;
+    err = messageValidator.validateStructHeader(offset, codec.kStructHeaderSize);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    var kVersionSizes = [
+      {version: 0, numBytes: 32}
+    ];
+    err = messageValidator.validateStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate CastMediaSink.ipEndpoint
+    err = messageValidator.validateStructPointer(offset + codec.kStructHeaderSize + 0, ip_endpoint$.IPEndPoint, false);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate CastMediaSink.modelName
+    err = messageValidator.validateStringPointer(offset + codec.kStructHeaderSize + 8, false)
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+
+    return validator.validationError.NONE;
+  };
+
+  CastMediaSink.encodedSize = codec.kStructHeaderSize + 24;
+
+  CastMediaSink.decode = function(decoder) {
+    v

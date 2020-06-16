@@ -1,0 +1,16 @@
+d(function() {
+          // Re-dispatch to subEvent's listeners.
+          $Function.apply(newEvent.dispatch, newEvent, $Array.slice(arguments));
+        }, newEvent),
+        {instanceId: webViewInstanceId});
+  }
+  return newEvent;
+}
+
+// This event is exposed as <webview>.contextMenus.onShow.
+function createContextMenusOnContextMenuEvent(webViewInstanceId,
+                                              opt_eventName,
+                                              opt_argSchemas,
+                                              opt_eventOptions) {
+  var subEventName = GetUniqueSubEventName(opt_eventName);
+  var newEvent = createCustomEvent(subEv

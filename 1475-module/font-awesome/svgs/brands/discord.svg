@@ -1,0 +1,42 @@
+0;
+  };
+  MediaController_SetVolume_Params.prototype.initFields_ = function(fields) {
+    for(var field in fields) {
+        if (this.hasOwnProperty(field))
+          this[field] = fields[field];
+    }
+  };
+
+  MediaController_SetVolume_Params.validate = function(messageValidator, offset) {
+    var err;
+    err = messageValidator.validateStructHeader(offset, codec.kStructHeaderSize);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    var kVersionSizes = [
+      {version: 0, numBytes: 16}
+    ];
+    err = messageValidator.validateStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    return validator.validationError.NONE;
+  };
+
+  MediaController_SetVolume_Params.encodedSize = codec.kStructHeaderSize + 8;
+
+  MediaController_SetVolume_Params.decode = function(decoder) {
+    var packed;
+    var val = new MediaController_SetVolume_Params();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    val.volume = decoder.decodeStruct(codec.Float);
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    return val;
+  };
+
+  MediaController_SetVolume_Params.encode = func

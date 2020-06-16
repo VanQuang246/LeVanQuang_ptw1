@@ -1,0 +1,34 @@
+s: props,
+    };
+    var modSetSchema = $Array.slice(rawSetSchema);
+    modSetSchema[0] = modSettingParam;
+    validate([details, callback], modSetSchema);
+
+    return sendRequest('contentSettings.set',
+                       [contentType, details, callback],
+                       extendSchema(modSetSchema));
+  };
+
+  this.clear = function(details, callback) {
+    var clearSchema = getFunctionParameters('clear');
+    validate([details, callback], clearSchema);
+
+    if ($Object.hasOwnProperty(DEPRECATED_CONTENT_TYPES, contentType)) {
+      console.warn('contentSettings.' + contentType + ' is deprecated; '
+                   + 'clearing it has no effect.');
+      $Function.apply(callback, undefined, []);
+      return;
+    }
+
+    return sendRequest('contentSettings.clear',
+                       [contentType, details, callback],
+                       extendSchema(clearSchema));
+  };
+
+  this.getResourceIdentifiers = function(callback) {
+    var schema = getFunctionParameters('getResourceIdentifiers');
+    validate([callback], schema);
+
+    if ($Object.hasOwnProperty(DEPRECATED_CONTENT_TYPES, contentType)) {
+      $Function.apply(callback, undefined, []);
+ 

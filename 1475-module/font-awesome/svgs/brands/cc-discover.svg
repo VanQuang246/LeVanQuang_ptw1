@@ -1,0 +1,35 @@
+
+	getSpriteSheet: function() { return ss; },
+	getImages: function() { return img; }
+};
+
+an.compositionLoaded = function(id) {
+	an.bootcompsLoaded.push(id);
+	for(var j=0; j<an.bootstrapListeners.length; j++) {
+		an.bootstrapListeners[j](id);
+	}
+}
+
+an.getComposition = function(id) {
+	return an.compositions[id];
+}
+
+
+
+})(createjs = createjs||{}, AdobeAn = AdobeAn||{});
+var createjs, AdobeAn;
+
+  var comp = AdobeAn.getComposition("2938882A303ADB40A07098D54A6DA5FE");
+  var lib = comp.getLibrary();
+  return {
+    create: function() { return new lib.CANVASunabletoaccessnetworkgrey02; },
+    properties: lib.properties
+  };
+})(createjs);
+</script>
+</head>
+<body id="t">
+  <div class="content">
+
+    <div id="animation" style="display:none;"></div>
+    <div id="illustration" class="illustration" style="display:block"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgxIDgxIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSI1MC4wMDElIiB4Mj0iNTAuMDAxJSIgeTE9IjEuNjMxJSIgeTI9Ijk4LjU0NSUiPjxzdG9wIHN0b3AtY29sb3I9IiNGRjFCMkQiIG9mZnNldD0iMzAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0ZBMUEyQyIgb2Zmc2V0PSI0My44JSIvPjxzdG9wIHN0b3AtY29sb3I9IiNFRDE1MjgiIG9mZnNldD0iNTkuNCUiLz

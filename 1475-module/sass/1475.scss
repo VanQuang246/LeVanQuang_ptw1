@@ -1,0 +1,12 @@
+$font-price: 13px;
+.recent{
+    font-weight: 500;
+    margin: 20px 0;
+}
+.old-price{
+    color: grey;
+    font-size: $font-price ;
+}
+.sale-price{
+    font-size: $font-price ;
+}

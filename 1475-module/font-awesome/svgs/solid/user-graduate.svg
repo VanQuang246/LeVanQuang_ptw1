@@ -1,0 +1,16 @@
+AQCBAABaBAQBEAvARA9QAFAOABAPQgIAnhTAdQhaAeiBAAQiAAAhbgegAE2A0IAAAAgAEwAXQAHAKAAALIgBAIQgBgPgFgOgAk1A0IgBgIQAAgLAHgKQgFAOgBAPIAAAAg");
+	this.shape_163.setTransform(38.8,23.8);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_163},{t:this.shape_162}]}).wait(90));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-22.5,7.7,122.4,69.1);
+
+
+(lib.MCstars = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.MCstartPurple = new lib.MCstartPurple();
+	this.MCstartPurple.name = "MCstartPurple";
+	this.MCstartPurple.parent = this;

@@ -1,0 +1,38 @@
+n err;
+
+
+
+    // validate MediaRoute.controllerType
+    err = messageValidator.validateEnum(offset + codec.kStructHeaderSize + 44, RouteControllerType);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+
+
+    return validator.validationError.NONE;
+  };
+
+  MediaRoute.encodedSize = codec.kStructHeaderSize + 48;
+
+  MediaRoute.decode = function(decoder) {
+    var packed;
+    var val = new MediaRoute();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    val.mediaRouteId = decoder.decodeStruct(codec.String);
+    val.presentationId = decoder.decodeStruct(codec.String);
+    val.mediaSource = decoder.decodeStruct(codec.NullableString);
+    val.mediaSinkId = decoder.decodeStruct(codec.String);
+    val.description = decoder.decodeStruct(codec.String);
+    packed = decoder.readUint8();
+    val.isLocal = (packed >> 0) & 1 ? true : false;
+    val.forDisplay = (packed >> 1) & 1 ? true : false;
+    val.isIncognito = (packed >> 2) & 1 ? true : false;
+    val.isLocalPresentation = (packed >> 3) & 1 ? true : false;
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    val.controllerType = decoder.decodeStruct(codec.Int32);
+    return val;
+  

@@ -1,0 +1,17 @@
+shape_194.setTransform(41.4,115.7);
+
+      this.shape_195 = new cjs.Shape();
+      this.shape_195.graphics.f().s("#191D1E").ss(1,1,1).p("AgSBUIAlin");
+      this.shape_195.setTransform(43.5,119.5);
+
+      this.shape_196 = new cjs.Shape();
+      this.shape_196.graphics.f().s("#191D1E").ss(1,1,1).p("AgVBhIArjB");
+      this.shape_196.setTransform(45.6,123.2);
+
+      this.shape_197 = new cjs.Shape();
+      this.shape_197.graphics.f().s("#191D1E").ss(1,1,1).p("AgZBuIAyjb");
+      this.shape_197.setTransform(47.7,127.1);
+
+      this.shape_198 = new cjs.Shape();
+      this.shape_198.graphics.f().s("#191D1E").ss(1,1,1).p("AgbB6IA4jz");
+     

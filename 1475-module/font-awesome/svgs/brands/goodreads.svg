@@ -1,0 +1,17 @@
+.prototype.onPresentationConnectionStateChanged = function(routeId, state) {
+    var params_ = new MediaRouter_OnPresentationConnectionStateChanged_Params();
+    params_.routeId = routeId;
+    params_.state = state;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouter_OnPresentationConnectionStateChanged_Name,
+        codec.align(MediaRouter_OnPresentationConnectionStateChanged_Params.encodedSize));
+    builder.encodeStruct(MediaRouter_OnPresentationConnectionStateChanged_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouterPtr.prototype.onPresentationConnectionClosed = function() {
+    return MediaRouterProxy.prototype.onPresentationConnectionClosed
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouterProxy.prototype.

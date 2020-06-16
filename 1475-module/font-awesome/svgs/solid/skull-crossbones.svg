@@ -1,0 +1,23 @@
+e = cjs.extend(symbol, cjs.MovieClip);
+	prototype.clone = mc_symbol_clone;
+	prototype.nominalBounds = nominalBounds;
+	prototype.frameBounds = frameBounds;
+	return prototype;
+	}
+
+
+(lib.MCucho2 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#191D1E").ss(1,1,1).p("AhJgFQACgBACgBQAegWAcgGQAkgIAdASQALAGAGANQADAGgBAHQgBAHgEAFQgIAIgYAAQglABgaAK");
+	this.shape.setTransform(7.4,3.8);
+
+	this.shape_1 = new cjs.Shape();
+	this.shape_1.graphics.f("#FFFFFF").s().p("AhHgHQAegWAcgGQAkgIAdASQALAGAGANQADAGgBAHQgBAHgEAFQgIAIgYAAQglABgaAKg");
+	this.shape_1.setTransform(7.6,3.8);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.MCucho2, new cjs.Rectangle(-1,-1,16.7,9.

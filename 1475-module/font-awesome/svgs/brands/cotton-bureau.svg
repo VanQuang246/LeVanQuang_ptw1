@@ -1,0 +1,36 @@
+t itself
+    // - bubbling: starting from the target's parent, going back up to the root.
+    // At any stage, a listener may call stopPropagation() on the event, which
+    // will immediately stop event propagation through this path.
+    if (this.dispatchEventAtCapturing_(event, path)) {
+      if (this.dispatchEventAtTargeting_(event, path))
+        this.dispatchEventAtBubbling_(event, path);
+    }
+  },
+
+  toString: function() {
+    var parentID = GetParentID(this.treeID, this.id);
+    var childTreeID = GetIntAttribute(this.treeID, this.id, 'childTreeId');
+    var count = GetChildCount(this.treeID, this.id);
+    var childIDs = [];
+    for (var i = 0; i < count; ++i) {
+      var childID = GetChildIDAtIndex(this.treeID, this.id, i);
+      $Array.push(childIDs, childID);
+    }
+
+    var result = 'node id=' + this.id +
+        ' role=' + this.role +
+        ' state=' + $JSON.stringify(this.state) +
+        ' parentID=' + parentID +
+        ' childIds=' + $JSON.stringify(childIDs);
+    if (this.hostNode_) {
+      var hostNodeImpl = privates(this.hostNode_).impl;
+      result += ' host treeID=' + hostNodeImpl.treeID +
+          ' host nodeID=' + hostNodeImpl.id;
+    }
+    if (childTreeID)
+      result += ' childTreeID=' + childTreeID;
+    return result;
+  },
+
+  dispatchEventA

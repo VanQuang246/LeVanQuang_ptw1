@@ -1,0 +1,52 @@
+;
+var Event = require('event_bindings').Event;
+var setIcon = require('setIcon').setIcon;
+var sendRequest = require('sendRequest').sendRequest;
+var slidingbarNatives = requireNative('slidingbar');
+
+
+binding.registerCustomHook(function(bindingsAPI) {
+  var apiFunctions = bindingsAPI.apiFunctions;
+
+  var slidingbars = {};
+  slidingbars.linkClickedHandlers = {};
+  var eventName = 'slidingbar.linkClicked';
+  slidingbars.event = new Event(eventName);
+  slidingbars.ensureListenerSetup = function () {
+    if (slidingbars.listening) {
+      return;
+    }
+    slidingbars.listening = true;
+    slidingbars.event.addListener(function () {
+      var id = arguments[0];
+      var onclick = slidingbars.linkClickedHandlers[id];
+      if (onclick) {
+        $Function.apply(onclick, null, []);
+      }
+    });
+  };
+
+  apiFunctions.setHandleRequest('open', function (details, callback) {
+    var id = slidingbarNatives.GetNextSlidingbarId();;
+    details.linkClickedId = id;
+
+    if (details.linkClickCallback) {
+      slidingbars.ensureListenerSetup();
+      slidingbars.linkClickedHandlers[id] = details.linkClickCallback;
+    }
+    var optArgs = {
+      customCallback: this.customCallback,
+    };
+
+    if (details.icon) {
+      var detailsCopy = JSON.parse(JSON.stringify(details));
+      setIcon(detailsCopy.icon, function (args) {
+        detailsCopy.icon.imageData = args.imageData;
+        sendRequest(this.name, [detailsCopy, callback], this.definition.parameters, optArgs);
+      }.bind(this));
+    } else {
+      sendRequest(this.name, [details, callback], this.definition.parameters, optArgs);
+    }
+  });
+
+  apiFunctions.setCustomCal

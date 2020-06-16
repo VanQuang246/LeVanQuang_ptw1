@@ -1,0 +1,12 @@
+).p("AgJAgQgFgCgBgKQgBgLAEgMQAEgNAHgIQAFgIAGABQAFACABALQABAKgEAMQgEANgHAJQgEAGgFAAIgCAAg");
+	this.shape_4.setTransform(32.7,32.5);
+
+	this.shape_5 = new cjs.Shape();
+	this.shape_5.graphics.f("#FFFFFF").s().p("AgTAbQgJgHgBgOQAAgMAIgMQAJgLAMgDQAMgDAIAIQAKAIAAANQAAANgIALQgJAMgMADIgFAAQgIAAgHgGg");
+	this.shape_5.setTransform(29.9,32.3);
+
+	this.shape_6 = new cjs.Shape();
+	this.shape_6.graphics.f("#FFFFFF").s().p("AgOAeQgHgFgBgMQgBgMAHgLQAGgNAKgFQAIgFAHAEQAHAFABAMQABAMgHALQgGANgJAFQgEADgFAAQgEAAgDgCg");
+	this.shape_6.setTransform(31.3,32.4);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[]}).to({state:[{t:this.shape}]},6).to({state:[{t:this.shape_1}]},1).to({state:[{t:this.shape_2}]},1).to({state:[{t:this.shape_3}]},1).to({state

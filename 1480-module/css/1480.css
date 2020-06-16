@@ -1,0 +1,19 @@
+#left-menu .menu-link {
+  font-size: 14px;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: grey; }
+
+#left-menu {
+  padding: 20px 20px 20px 20px;
+  border: 1px solid grey; }
+  #left-menu .menu-link:hover {
+    color: black;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: 0.4s; }
+  #left-menu .active {
+    background-color: #bca9a3;
+    color: black; }

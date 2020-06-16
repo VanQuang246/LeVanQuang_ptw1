@@ -1,0 +1,30 @@
+,1).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.shape_127).wait(5).to({_off:false},0).to({_off:true},1).wait(34).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).to({_off:true},1).wait(30).to({_off:false},0).to({_off:true},1).wait(5).to({_off:false},0).wait(1));
+
+	// noga-2
+	this.shape_147 = new cjs.Shape();
+	this.shape_147.graphics.f().s("rgba(25,29,30,0.2)").ss(1,1,1).p("AgkAmIAeg2IAqgV");
+	this.shape_147.setTransform(9.6,71.3);
+
+	this.shape_148 = new cjs.Shape();
+	this.shape_148.graphics.f().s("rgba(25,29,30,0.2)").ss(1,1,1).p("AAsgiIgqAVIguAw");
+	this.shape_148.setTransform(8.8,71);
+
+	this.shape_149 = new cjs.Shape();
+	this.shape_149.graphics.f().s("rgba(25,29,30,0.2)").ss(1,1,1).p("AAWgpIgqAVIgBA+");
+	this.shape_149.setTransform(11,71.6);
+
+	this.shape_150 = new cjs.Shape();
+	this.shape_150.graphics.f().s("rgba(25,29,30,0.2)").ss(1,1,1).p("AAVgqIgpAjIAkAy");
+	this.shape_150.setTransform(11.1,71.7);
+
+	this.shape_151 = new cjs.Shape();
+	this.shape_151.graphics.f().s("rgba(25,29,30,0.2)").ss(1,1,1).p("AAEglIgdArIAzAg");
+	this.shape_151.setTransform(12.8,71.2);
+
+	this.shape_152 = new cjs.Shape();
+	this.shape_152.graphics.f().s("rgba(25,29,30,0.2)").ss(1,1,1).p("AgDglIgTApIAtAi");
+	this.shape_152.setTransform(13.6,71.3);
+
+	this.shape_153 = new cjs.Shape();
+	this.shape_153.graphics.f().s("rgba(

@@ -1,0 +1,19 @@
+(err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouter_OnSinkAvailabilityUpdated_Params.providerId
+    err = messageValidator.validateEnum(offset + codec.kStructHeaderSize + 0, MediaRouteProvider.Id);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouter_OnSinkAvailabilityUpdated_Params.availability
+    err = messageValidator.validateEnum(offset + codec.kStructHeaderSize + 4, MediaRouter.SinkAvailability);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    return validator.validationError.NONE;
+  };
+
+  MediaRouter_OnSinkAvailability

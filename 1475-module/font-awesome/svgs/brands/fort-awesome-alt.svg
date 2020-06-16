@@ -1,0 +1,107 @@
+uter_OnPresentationConnectionClosed_Params.prototype.initDefaults_ = function() {
+    this.routeId = null;
+    this.reason = 0;
+    this.message = null;
+  };
+  MediaRouter_OnPresentationConnectionClosed_Params.prototype.initFields_ = function(fields) {
+    for(var field in fields) {
+        if (this.hasOwnProperty(field))
+          this[field] = fields[field];
+    }
+  };
+
+  MediaRouter_OnPresentationConnectionClosed_Params.validate = function(messageValidator, offset) {
+    var err;
+    err = messageValidator.validateStructHeader(offset, codec.kStructHeaderSize);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    var kVersionSizes = [
+      {version: 0, numBytes: 32}
+    ];
+    err = messageValidator.validateStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouter_OnPresentationConnectionClosed_Params.routeId
+    err = messageValidator.validateStringPointer(offset + codec.kStructHeaderSize + 0, false)
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouter_OnPresentationConnectionClosed_Params.reason
+    err = messageValidator.validateEnum(offset + codec.kStructHeaderSize + 8, MediaRouter.PresentationConnectionCloseReason);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouter_OnPresentationConnectionClosed_Params.message
+    err = messageValidator.validateStringPointer(offset + codec.kStructHeaderSize + 16, false)
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    return validator.validationError.NONE;
+  };
+
+  MediaRouter_OnPresentationConnectionClosed_Params.encodedSize = codec.kStructHeaderSize + 24;
+
+  MediaRouter_OnPresentationConnectionClosed_Params.decode = function(decoder) {
+    var packed;
+    var val = new MediaRouter_OnPresentationConnectionClosed_Params();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    val.routeId = decoder.decodeStruct(codec.String);
+    val.reason = decoder.decodeStruct(codec.Int32);
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    val.message = decoder.decodeStruct(codec.String);
+    return val;
+  };
+
+  MediaRouter_OnPresentationConnectionClosed_Params.encode = function(encoder, val) {
+    var packed;
+    encoder.writeUint32(MediaRouter_OnPresentationConnectionClosed_Params.encodedSize);
+    encoder.writeUint32(0);
+    encoder.encodeStruct(codec.String, val.routeId);
+    encoder.encodeStruct(codec.Int32, val.reason);
+    encoder.skip(1);
+    encoder.skip(1);
+    encoder.skip(1);
+    encoder.skip(1);
+    encoder.encodeStruct(codec.String, val.message);
+  };
+  function MediaRouter_OnRouteMessagesReceived_Params(values) {
+    this.initDefaults_();
+    this.initFields_(values);
+  }
+
+
+  MediaRouter_OnRouteMessagesReceived_Params.prototype.initDefaults_ = function() {
+    this.routeId = null;
+    this.messages = null;
+  };
+  MediaRouter_OnRouteMessagesReceived_Params.prototype.initFields_ = function(fields) {
+    for(var field in fields) {
+        if (this.hasOwnProperty(field))
+          this[field] = fields[field];
+    }
+  };
+
+  MediaRouter_OnRouteMessagesReceived_Params.validate = function(messageValidator, offset) {
+    var err;
+    err = messageValidator.validateStructHeader(offset, codec.kStructHeaderSize);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    var kVersionSizes = [
+      {version: 0, numBytes: 24}
+    ];
+    err = messageValidator.validateStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRoute

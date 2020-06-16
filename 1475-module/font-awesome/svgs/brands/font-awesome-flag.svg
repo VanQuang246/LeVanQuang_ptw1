@@ -1,0 +1,20 @@
+troller);
+    encoder.encodeStruct(new codec.Interface(media_status$.MediaStatusObserverPtr), val.observer);
+    encoder.skip(1);
+    encoder.skip(1);
+    encoder.skip(1);
+    encoder.skip(1);
+  };
+  function MediaRouteProvider_CreateMediaRouteController_ResponseParams(values) {
+    this.initDefaults_();
+    this.initFields_(values);
+  }
+
+
+  MediaRouteProvider_CreateMediaRouteController_ResponseParams.prototype.initDefaults_ = function() {
+    this.success = false;
+  };
+  MediaRouteProvider_CreateMediaRouteController_ResponseParams.prototype.initFields_ = function(fields) {
+    for(var field in fields) {
+        if (this.hasOwnProperty(field))
+     

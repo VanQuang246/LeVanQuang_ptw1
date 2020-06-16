@@ -1,0 +1,24 @@
+codec.kStructHeaderSize + 48;
+
+  MediaStatus.decode = function(decoder) {
+    var packed;
+    var val = new MediaStatus();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    val.title = decoder.decodeStruct(codec.String);
+    packed = decoder.readUint8();
+    val.canPlayPause = (packed >> 0) & 1 ? true : false;
+    val.canMute = (packed >> 1) & 1 ? true : false;
+    val.canSetVolume = (packed >> 2) & 1 ? true : false;
+    val.canSeek = (packed >> 3) & 1 ? true : false;
+    val.isMuted = (packed >> 4) & 1 ? true : false;
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    val.playState = decoder.decodeStruct(codec.Int32);
+    val.volume = decoder.decodeStruct(codec.Float);
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    val.duration = decoder.decodeStruc

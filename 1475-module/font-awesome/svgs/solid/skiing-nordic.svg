@@ -1,0 +1,9 @@
+X:17.1,regY:89.1,rotation:-16.7,x:30.5,y:138.9},0).wait(9).to({regX:17,regY:89.2,scaleX:0.97,rotation:0,skewX:-25,skewY:-23.9,x:30.6},4,cjs.Ease.get(-1)).to({regX:17.2,scaleX:1,scaleY:0.92,skewX:0,skewY:0,x:30.5,y:139},9).to({regX:17.4,regY:89.1,scaleY:1.06,rotation:-2,x:30.7,y:138.8},4,cjs.Ease.get(1)).wait(1).to({regX:71,regY:44.8,scaleY:1.01,rotation:-0.9,x:83.5,y:93.3},0).wait(1).to({scaleY:0.98,rotation:-0.2,x:83.9,y:95.2},0).wait(1).to({regX:17.2,regY:89.1,scaleY:0.97,rotation:0,x:30.5,y:138.9},0).to({scaleY:1,y:138.8},2).wait(27));
+
+      // MCziemia1
+      this.MCziemia1 = new lib.MCziemia1();
+      this.MCziemia1.name = "MCziemia1";
+      this.MCziemia1.parent = this;
+      this.MCziemia1.setTransform(98.6,134.7,1,1,0,0,0,90.2,4.5);
+
+      this.timeline.addTween(cjs.Tween.get(this.MCziemia1).wait(82).to({y:129.7},3).to

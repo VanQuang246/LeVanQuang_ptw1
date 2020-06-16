@@ -1,0 +1,17 @@
+ape_82.graphics.f().s("#1A1A1A").ss(1,1,1).p("ABRhmICIAnICaCNIjKhGIkuBfIjtgUIBjiGICeALIgUCPABRhmIBYBuAhxgoIDCg+");
+	this.shape_82.setTransform(77.3,66.9);
+
+	this.shape_83 = new cjs.Shape();
+	this.shape_83.graphics.f("#FFFFFF").s().p("AlyBTIBjiGICeALIgUCOgAhxgoIDCg+IBYBuIhYhuICIAoICaCMIjKhGIkuBegAhxgog");
+	this.shape_83.setTransform(77.3,66.9);
+
+	this.shape_84 = new cjs.Shape();
+	this.shape_84.graphics.f().s("#1A1A1A").ss(1,1,1).p("ABShjICHAnICaCKIjJhIIkuBeIjugRIBjiDICeAKIgTCKABShjIBYBpAhxgmIDDg9");
+	this.shape_84.setTransform(77.3,65.8);
+
+	this.shape_85 = new cjs.Shape();
+	this.shape_85.graphics.f("#FFFFFF").s().p("AlyBTIBjiDICeAKIgTCKgAhxgmIDCg9IBYBpIhYhpICIAnICaCKIjKhIIktBegAhxgmg");
+	this.shape_85.setTransform(77.3,65.8);
+
+	this.shape_86 = new cjs.Shape();
+	this.shape_86.graphics.f().s("#1A1A1A").ss(1,1,1).p("ABShgICHAnICZCIIjJhLIktBdIjtgOIBih/ICeAIIgTCFABShgIBXBkAhxgkIDDg

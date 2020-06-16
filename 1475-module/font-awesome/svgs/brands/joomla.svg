@@ -1,0 +1,22 @@
+ponseParams();
+        responseParams.audioStreamId = response.audioStreamId;
+        responseParams.videoStreamId = response.videoStreamId;
+        var builder = new codec.MessageV1Builder(
+            kMirrorServiceRemoter_StartDataStreams_Name,
+            codec.align(MirrorServiceRemoter_StartDataStreams_ResponseParams.encodedSize),
+            codec.kMessageIsResponse, reader.requestID);
+        builder.encodeStruct(MirrorServiceRemoter_StartDataStreams_ResponseParams,
+                             responseParams);
+        var message = builder.finish();
+        responder.accept(message);
+      });
+      return true;
+    case kMirrorServiceRemoter_EstimateTransmissionCapacity_Name:
+      var params = reader.decodeStruct(MirrorServiceRemoter_EstimateTransmissionCapacity_Params);
+      this.estimateTransmissionCapacity().then(function(response) {
+        var responseParams =
+            new MirrorServiceRemoter_EstimateTransmissionCapacity_ResponseParams();
+        responseParams.rate = response.rate;
+        var builder = new codec.MessageV1Builder(
+            kMirrorServiceRemoter_EstimateTransmissionCapacity_Name,
+       

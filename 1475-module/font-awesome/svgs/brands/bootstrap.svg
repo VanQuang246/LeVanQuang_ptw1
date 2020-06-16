@@ -1,0 +1,17 @@
+
+
+	this.instance_2 = new lib.Symbol1();
+	this.instance_2.parent = this;
+	this.instance_2.setTransform(-4.4,39,1.049,1.049,0,180,0,5.2,5.3);
+
+	var maskedShapeInstanceList = [this.instance,this.instance_1,this.instance_2];
+
+	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
+		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
+	}
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(90));
+
+	// Layer 8
+	this.shape_78 = new cjs.Shape();
+	this.shape_78.graphics.f().s("#1A1A1A").ss

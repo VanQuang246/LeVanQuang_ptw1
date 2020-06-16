@@ -1,0 +1,29 @@
+reeID The id of the accessibility tree.
+ * @return {?number} The id of the root node.
+ */
+var GetRootID = natives.GetRootID;
+
+/**
+ * @param {number} axTreeID The id of the accessibility tree.
+ * @return {?string} The title of the document.
+ */
+var GetDocTitle = natives.GetDocTitle;
+
+/**
+ * @param {number} axTreeID The id of the accessibility tree.
+ * @return {?string} The url of the document.
+ */
+var GetDocURL = natives.GetDocURL;
+
+/**
+ * @param {number} axTreeID The id of the accessibility tree.
+ * @return {?boolean} True if the document has finished loading.
+ */
+var GetDocLoaded = natives.GetDocLoaded;
+
+/**
+ * @param {number} axTreeID The id of the accessibility tree.
+ * @return {?number} The loading progress, from 0.0 to 1.0 (fully loaded).
+ */
+var GetDocLoadingProgress =
+    natives.GetD

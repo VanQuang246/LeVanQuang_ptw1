@@ -1,0 +1,24 @@
+ateRoute_Params.encodedSize = codec.kStructHeaderSize + 48;
+
+  MediaRouteProvider_CreateRoute_Params.decode = function(decoder) {
+    var packed;
+    var val = new MediaRouteProvider_CreateRoute_Params();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    val.mediaSource = decoder.decodeStruct(codec.String);
+    val.sinkId = decoder.decodeStruct(codec.String);
+    val.originalPresentationId = decoder.decodeStruct(codec.String);
+    val.origin = decoder.decodeStructPointer(origin$.Origin);
+    val.tabId = decoder.decodeStruct(codec.Int32);
+    packed = decoder.readUint8();
+    val.incognito = (packed >> 0) & 1 ? true : false;
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    val.timeout = decoder.decodeStructPointer(time$.TimeDelta);
+    return val;
+  };
+
+  MediaRouteProvider_CreateRoute_Params.encode = function(encoder, val) {
+    var packed;
+    encoder.writeUint32(MediaRouteProvider_CreateRo

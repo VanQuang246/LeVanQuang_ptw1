@@ -1,0 +1,48 @@
+tingSourceAssociatedPtr = MirrorServiceRemotingSourceAssociatedPtr;
+})();// Copyright 2014 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+'use strict';
+
+(function() {
+  var mojomId = 'media/mojo/interfaces/remoting_common.mojom';
+  if (mojo.internal.isMojomLoaded(mojomId)) {
+    console.warn('The following mojom is loaded multiple times: ' + mojomId);
+    return;
+  }
+  mojo.internal.markMojomLoaded(mojomId);
+  var bindings = mojo;
+  var associatedBindings = mojo;
+  var codec = mojo.internal;
+  var validator = mojo.internal;
+
+  var exports = mojo.internal.exposeNamespace('media.mojom');
+
+
+  var RemotingStopReason = {};
+  RemotingStopReason.ROUTE_TERMINATED = 0;
+  RemotingStopReason.LOCAL_PLAYBACK = RemotingStopReason.ROUTE_TERMINATED + 1;
+  RemotingStopReason.SOURCE_GONE = RemotingStopReason.LOCAL_PLAYBACK + 1;
+  RemotingStopReason.MESSAGE_SEND_FAILED = RemotingStopReason.SOURCE_GONE + 1;
+  RemotingStopReason.DATA_SEND_FAILED = RemotingStopReason.MESSAGE_SEND_FAILED + 1;
+  RemotingStopReason.UNEXPECTED_FAILURE = RemotingStopReason.DATA_SEND_FAILED + 1;
+  RemotingStopReason.SERVICE_GONE = RemotingStopReason.UNEXPECTED_FAILURE + 1;
+  RemotingStopReason.USER_DISABLED = RemotingStopReason.SERVICE_GONE + 1;
+
+  RemotingStopReason.isKnownEnumValue = function(value) {
+    switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+    case 7:
+      return true;
+    }
+    return false;
+  };
+
+  RemotingStopReas

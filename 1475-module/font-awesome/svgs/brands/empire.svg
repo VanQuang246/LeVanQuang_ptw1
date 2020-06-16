@@ -1,0 +1,63 @@
+   return err;
+
+
+    // validate RouteMessage.type
+    err = messageValidator.validateEnum(offset + codec.kStructHeaderSize + 0, RouteMessage.Type);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate RouteMessage.message
+    err = messageValidator.validateStringPointer(offset + codec.kStructHeaderSize + 8, true)
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate RouteMessage.data
+    err = messageValidator.validateArrayPointer(offset + codec.kStructHeaderSize + 16, 1, codec.Uint8, true, [0], 0);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    return validator.validationError.NONE;
+  };
+
+  RouteMessage.encodedSize = codec.kStructHeaderSize + 24;
+
+  RouteMessage.decode = function(decoder) {
+    var packed;
+    var val = new RouteMessage();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    val.type = decoder.decodeStruct(codec.Int32);
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    decoder.skip(1);
+    val.message = decoder.decodeStruct(codec.NullableString);
+    val.data = decoder.decodeArrayPointer(codec.Uint8);
+    return val;
+  };
+
+  RouteMessage.encode = function(encoder, val) {
+    var packed;
+    encoder.writeUint32(RouteMessage.encodedSize);
+    encoder.writeUint32(0);
+    encoder.encodeStruct(codec.Int32, val.type);
+    encoder.skip(1);
+    encoder.skip(1);
+    encoder.skip(1);
+    encoder.skip(1);
+    encoder.encodeStruct(codec.NullableString, val.message);
+    encoder.encodeArrayPointer(codec.Uint8, val.data);
+  };
+  function SinkSearchCriteria(values) {
+    this.initDefaults_();
+    this.initFields_(values);
+  }
+
+
+  SinkSearchCriteria.prototype.initDefaults_ = function() {
+    this.input = null;
+    this.domain = null;
+  };
+  SinkSearchCriteria.prototype.i

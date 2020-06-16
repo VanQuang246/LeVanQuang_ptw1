@@ -1,0 +1,20 @@
+raphics_7,x:10.5,y:43.2}).wait(32).to({graphics:null,x:0,y:0}).wait(51));
+
+	// MCjezyk
+	this.MCjezyk = new lib.MCjezyk();
+	this.MCjezyk.name = "MCjezyk";
+	this.MCjezyk.parent = this;
+	this.MCjezyk.setTransform(18.4,32.3,1,1,54.2,0,0,3.8,0.2);
+	this.MCjezyk._off = true;
+
+	var maskedShapeInstanceList = [this.MCjezyk];
+
+	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
+		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
+	}
+
+	this.timeline.addTween(cjs.Tween.get(this.MCjezyk).wait(7).to({_off:false},0).to({regX:3.7,regY:0.3,rotation:-17.7,x:13.9,y:36},5,cjs.Ease.get(1)).to({rotation:-4.5},5).wait(17).to({regX:3.8,regY:0.2,rotation:54.2,x:18.4,y:32.3},4).to({_off:true},1).wait(51));
+
+	// Layer 13
+	this.shape_20 = new cjs.Shape();
+	this.shap

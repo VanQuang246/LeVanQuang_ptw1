@@ -1,0 +1,19 @@
+teStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouter_OnSinksReceived_Params.providerId
+    err = messageValidator.validateEnum(offset + codec.kStructHeaderSize + 0, MediaRouteProvider.Id);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouter_OnSinksReceived_Params.mediaSource
+    err = messageValidator.validateStringPointer(offset + codec.kStructHeaderSize + 8, false)
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MediaRouter_OnSinksReceived_Params.sinks
+    err = messageValidator.validateArrayPointer(offset + codec.kStructH

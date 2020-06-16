@@ -1,0 +1,19 @@
+{}).to({state:[{t:this.shape_207},{t:this.MCstartRed_2},{t:this.MCstartRed_1}]}).wait(119));
+
+    }).prototype = p = new cjs.MovieClip();
+    p.nominalBounds = new cjs.Rectangle(7.4,5.5,205.8,157.7);
+
+
+// stage content:
+    (lib.CANVASunabletoconnecttotheinternetgrey04 = function(mode,startPosition,loop) {
+      this.initialize(mode,startPosition,loop,{});
+
+      // Layer 1
+      this.MCunableToConnectToTheInternet_v01 = new lib.MCunableToConnectToTheInternet_v01();
+      this.MCunableToConnectToTheInternet_v01.name = "MCunableToConnectToTheInternet_v01";
+      this.MCunableToConnectToTheInternet_v01.parent = this;
+      this.MCunableToConnectToTheInternet_v01.setTransform(75,85,1,1,0,0,0,75,85);
+
+      this.timeline.addTween(cjs.Tween.get(this.MCunableToConnectToTheInternet_v01).wait(120));
+
+    }).prototype = p = new

@@ -1,0 +1,21 @@
+// Fire focus events if necessary.
+    if (automationUtil.focusedNode &&
+        automationUtil.focusedNode != previousFocusedNode) {
+      var eventParamsCopy = {};
+      for (var key in eventParams)
+        eventParamsCopy[key] = eventParams[key];
+      eventParamsCopy['eventType'] = 'focus';
+      eventParamsCopy['treeID'] =
+          privates(automationUtil.focusedNode.root).impl.treeID;
+      eventParamsCopy['targetID'] =
+          privates(automationUtil.focusedNode).impl.id;
+      privates(automationUtil.focusedNode.root)
+          .impl.onAccessibilityEvent(eventParamsCopy);
+    }
+  }
+
+  // Note that focus type events have already been handled above if there was a
+  // focused node. All other events, even non-focus events that triggered a
+  // focus dispatch, still need to have their original event fired.
+  if ((!automationUtil.focusedNode || eventParams.eventType != 'focus') &&
+      !privates(targetTree).impl.onAccessibil

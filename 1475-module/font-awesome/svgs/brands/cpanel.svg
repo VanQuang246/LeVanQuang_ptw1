@@ -1,0 +1,52 @@
+if (!resultNode) {
+      logging.WARNING('Query selector result not in tree: ' +
+                      resultAutomationNodeID);
+      userCallback(null);
+    }
+    userCallback(resultNode);
+  },
+
+  findInternal_: function(params, opt_results) {
+    var result = null;
+    this.forAllDescendants_(function(node) {
+      if (privates(node).impl.matchInternal_(params)) {
+        if (opt_results)
+          $Array.push(opt_results, node);
+        else
+          result = node;
+        return !opt_results;
+      }
+    });
+    if (opt_results)
+      return opt_results;
+    return result;
+  },
+
+  /**
+   * Executes a closure for all of this node's descendants, in pre-order.
+   * Early-outs if the closure returns true.
+   * @param {Function(AutomationNode):boolean} closure Closure to be executed
+   *     for each node. Return true to early-out the traversal.
+   */
+  forAllDescendants_: function(closure) {
+    var stack = $Array.reverse(this.wrapper.children);
+    while (stack.length > 0) {
+      var node = $Array.pop(stack);
+      if (closure(node))
+        return;
+
+      var children = node.children;
+      for (var i = children.length - 1; i >= 0; i--)
+        $Array.push(stack, children[i]);
+    }
+  },
+
+  matchInternal_: function(params) {
+    if ($Object.keys(params).length === 0)
+      return false;
+
+    if ('role' in params && this.role != params.role)
+        return false;
+
+    if ('state' in params) {
+      for (v

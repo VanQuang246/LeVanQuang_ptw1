@@ -1,0 +1,39 @@
+alues) {
+    this.initDefaults_();
+    this.initFields_(values);
+  }
+
+
+  MirrorServiceRemoter_SendMessageToSink_Params.prototype.initDefaults_ = function() {
+    this.message = null;
+  };
+  MirrorServiceRemoter_SendMessageToSink_Params.prototype.initFields_ = function(fields) {
+    for(var field in fields) {
+        if (this.hasOwnProperty(field))
+          this[field] = fields[field];
+    }
+  };
+
+  MirrorServiceRemoter_SendMessageToSink_Params.validate = function(messageValidator, offset) {
+    var err;
+    err = messageValidator.validateStructHeader(offset, codec.kStructHeaderSize);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    var kVersionSizes = [
+      {version: 0, numBytes: 16}
+    ];
+    err = messageValidator.validateStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+
+    // validate MirrorServiceRemoter_SendMessageToSink_Params.message
+    err = messageValidator.validateArrayPointer(offset + codec.kStructHeaderSize + 0, 1, codec.Uint8, false, [0], 0);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    return validator.validationError.NONE;
+  };
+
+  Mirr

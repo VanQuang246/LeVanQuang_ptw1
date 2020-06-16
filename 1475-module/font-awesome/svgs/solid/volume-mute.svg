@@ -1,0 +1,25 @@
+reeId');
+    if (childTreeID)
+      return AutomationRootNodeImpl.get(childTreeID);
+  },
+
+  get firstChild() {
+    if (!this.rootImpl)
+      return undefined;
+    if (this.childTree)
+      return this.childTree;
+    if (!GetChildCount(this.treeID, this.id))
+      return undefined;
+    var firstChildID = GetChildIDAtIndex(this.treeID, this.id, 0);
+    return this.rootImpl.get(firstChildID);
+  },
+
+  get lastChild() {
+    if (!this.rootImpl)
+      return undefined;
+    if (this.childTree)
+      return this.childTree;
+    var count = GetChildCount(this.treeID, this.id);
+    if (!count)
+      return undefined;
+    va

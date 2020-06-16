@@ -1,0 +1,31 @@
+eStructVersion(offset, kVersionSizes);
+    if (err !== validator.validationError.NONE)
+        return err;
+
+    return validator.validationError.NONE;
+  };
+
+  MediaController_Play_Params.encodedSize = codec.kStructHeaderSize + 0;
+
+  MediaController_Play_Params.decode = function(decoder) {
+    var packed;
+    var val = new MediaController_Play_Params();
+    var numberOfBytes = decoder.readUint32();
+    var version = decoder.readUint32();
+    return val;
+  };
+
+  MediaController_Play_Params.encode = function(encoder, val) {
+    var packed;
+    encoder.writeUint32(MediaController_Play_Params.encodedSize);
+    encoder.writeUint32(0);
+  };
+  function MediaController_Pause_Params(values) {
+    this.initDefaults_();
+    this.initFields_(values);
+  }
+
+
+  MediaController_Pause_Params.prototype.initDefaults_ = function() {
+  };
+  MediaCon

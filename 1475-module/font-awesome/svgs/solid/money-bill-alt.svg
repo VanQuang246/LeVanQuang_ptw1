@@ -1,0 +1,25 @@
+const canvas = buildCanvasElement(animation);
+      const stage = buildStage(canvas, animation);
+      this.stages.push(stage);
+
+      const resizeStage = makeResizeStage(stage, animation);
+      resizeStage();
+      window.addEventListener('resize', resizeStage);
+
+      if (!document.hidden)
+        createjs.Ticker.addEventListener('tick', stage);
+
+      if (createWrapper) {
+        const wrapper = buildWrapperElement(animation);
+        wrapper.appendChild(canvas);
+        return wrapper;
+      }
+
+      return canvas;
+    }
+  }
+
+  window.createjsAnimator = new CreatejsAnimator();
+}
+</script>
+  <script type="text/javascript">// Copyright (C) 2017 Opera Software AS.  All rights rese

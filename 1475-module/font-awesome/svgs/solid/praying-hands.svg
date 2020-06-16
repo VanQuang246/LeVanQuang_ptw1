@@ -1,0 +1,22 @@
+his.shape_321}]},1).to({state:[{t:this.shape_322}]},1).to({state:[]},1).wait(14));
+	this.timeline.addTween(cjs.Tween.get(this.shape_315).wait(93).to({_off:false},0).wait(2).to({y:89.6},0).wait(1).to({_off:true},1).wait(23));
+
+	// REKA-1
+	this.shape_323 = new cjs.Shape();
+	this.shape_323.graphics.f().s("#1A1A1A").ss(1,1,1).p("AAZg7IhEBTIBXAk");
+	this.shape_323.setTransform(42.8,83.7);
+
+	this.shape_324 = new cjs.Shape();
+	this.shape_324.graphics.f().s("#1A1A1A").ss(1,1,1).p("AAYg2Ig+BVIBOAY");
+	this.shape_324.setTransform(42.8,82.2);
+
+	this.shape_325 = new cjs.Shape();
+	this.shape_325.graphics.f().s("#1A1A1A").ss(1,1,1).p("AAXgzIg7BWIBJAR");
+	this.shape_325.setTransform(42.8,81.2);
+
+	this.shape_326 = new cjs.Shape();
+	this.shape_326.graphics.f().s("#1A1A1A").ss(1,1,1).p("AAXgyIg6BXIBHAO");
+	this.shape_326.setTransform(42.8,80.9);
+
+	this.shape_327 = new cjs.Shape();
+	this.shape_327.graphics.f().s("#1A1A1A").ss(1,1,1).p("AASgyIg0BT

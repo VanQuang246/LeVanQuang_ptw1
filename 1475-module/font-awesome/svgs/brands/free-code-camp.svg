@@ -1,0 +1,45 @@
+SinkExtraData.Tags.dialMediaSink;
+      this.$data = value;
+    }
+  });
+  Object.defineProperty(MediaSinkExtraData.prototype, "castMediaSink", {
+    get: function() {
+      if (this.$tag != MediaSinkExtraData.Tags.castMediaSink) {
+        throw new ReferenceError(
+            "MediaSinkExtraData.castMediaSink is not currently set.");
+      }
+      return this.$data;
+    },
+
+    set: function(value) {
+      this.$tag = MediaSinkExtraData.Tags.castMediaSink;
+      this.$data = value;
+    }
+  });
+
+
+    MediaSinkExtraData.encode = function(encoder, val) {
+      if (val == null) {
+        encoder.writeUint64(0);
+        encoder.writeUint64(0);
+        return;
+      }
+      if (val.$tag == undefined) {
+        throw new TypeError("Cannot encode unions with an unknown member set.");
+      }
+
+      encoder.writeUint32(16);
+      encoder.writeUint32(val.$tag);
+      switch (val.$tag) {
+        case MediaSinkExtraData.Tags.dialMediaSink:
+          encoder.encodeStructPointer(DialMediaSink, val.dialMediaSink);
+          break;
+        case MediaSinkExtraData.Tags.castMediaSink:
+          encoder.encodeStructPointer(CastMediaSink, val.castMediaSink);
+          break;
+      }
+      encoder.align();
+    };
+
+
+    MediaSinkExtraData.decode = func

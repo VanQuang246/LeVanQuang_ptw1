@@ -1,0 +1,3 @@
+.to({_off:false},0).wait(3).to({_off:true},1).wait(17).to({_off:false},0).to({_off:true},1).wait(13).to({_off:false},0).wait(7).to({_off:true},1).wait(13).to({_off:false},0).to({_off:true},16).wait(42));
+      this.timeline.addTween(cjs.Tween.get(this.shape_102).wait(11).to({_off:false},0).to({_off:true},1).wait(9).to({_off:false},0).to({_off:true},1).wait(7).to({_off:false},0).to({_off:true},1).wait(9).to({_off:false},0).to({_off:true},1).wait(10).to({_off:false},0).to({_off:true},1).wait(9).to({_off:false},0).to({_off:true},1).wait(58));
+      this.timeline.addTween(cjs.Tween.get(this.shape_103).wait

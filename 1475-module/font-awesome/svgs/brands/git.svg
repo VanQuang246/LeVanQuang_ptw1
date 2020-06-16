@@ -1,0 +1,24 @@
+ngForRouteMessages = function() {
+    return MediaRouteProviderProxy.prototype.stopListeningForRouteMessages
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.stopListeningForRouteMessages = function(routeId) {
+    var params_ = new MediaRouteProvider_StopListeningForRouteMessages_Params();
+    params_.routeId = routeId;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_StopListeningForRouteMessages_Name,
+        codec.align(MediaRouteProvider_StopListeningForRouteMessages_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_StopListeningForRouteMessages_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.detachRoute = function() {
+    return MediaRouteProviderProxy.prototype.detachRoute
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.detachRoute = function(routeId) {
+    var params_ = new MediaRouteProvider_DetachRoute_Params();
+    params_.routeId = routeId;
+    var builder = new codec.Me

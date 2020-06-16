@@ -1,0 +1,17 @@
+
+	// MCplamaNaOgonie
+	this.MCplamaNaOgonie = new lib.MCplamaNaOgonie();
+	this.MCplamaNaOgonie.name = "MCplamaNaOgonie";
+	this.MCplamaNaOgonie.parent = this;
+	this.MCplamaNaOgonie.setTransform(139.7,98.2,1,1,0,0,0,10,10);
+
+	var maskedShapeInstanceList = [this.MCplamaNaOgonie];
+
+	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
+		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
+	}
+
+	this.timeline.addTween(cjs.Tween.get(this.MCplamaNaOgonie).to({x:136.3,y:88.7},10).to({x:128.4,y:78.8},11).to({x:141.4,y:94.9},2).to({x:141.9,y:106.4},1).to({x:138.2,y:86.5},2).to({x:131.6,y:80.7},1).to({x:142.6,y:97.8},2).to({x:141.6,y:106},1).to({x:140.5,y:91.8},2).to({x:128.7,y:81.6},2).to({x:140.9,y:94.3},2).to({x:135.9,y:111.2},2).to({x:140.2,y:94},2).to({x:119.7,y:78},3).to({x:135.8,y:89.6},5).to({x:141.3,y:115.4},7).to({x:139.5,y:98.5},34,cjs.Ease.get(1)).wait(1));
+
+	// ogon
+	this.s

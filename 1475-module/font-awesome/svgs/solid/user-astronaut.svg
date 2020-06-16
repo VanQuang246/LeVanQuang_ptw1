@@ -1,0 +1,7 @@
+2,72.1);
+
+	this.shape_146 = new cjs.Shape();
+	this.shape_146.graphics.f().s("rgba(25,29,30,0.2)").ss(1,1,1).p("AgQg1IAgApIgPBB");
+	this.shape_146.setTransform(69.2,72.1);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_122}]}).to({state:[{t:this.shape_123}]},1).to({state:[{t:this.shape_124}]},1).to({state:[{t:this.shape_125}]},1).to({state:[{t:this.shape_126}]},1).to({state:[{t:this.shape_127}]},1).to({state:[{t:this.shape_122}]},1).to({state:[{t:this.shape_123}]},1).to({state:[{t:this.shape_124}]},1).to({state:[{t:this.shape_125}]},1).to({state:[{t:this.shape_128}]},1).to({state:[{t:this.shape_129}]},1).to({state:[{t:this.shape_130}]},1).to({state:[{t:this.shape_131}]},1).to({state:[{t:this.shape_132}]},1).to({state:[{t:this.shape_133}]},1).to({state:[{t:t
