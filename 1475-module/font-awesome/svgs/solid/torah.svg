@@ -1,17 +1,1 @@
-
-	// MCplamaNaOgonie
-	this.MCplamaNaOgonie = new lib.MCplamaNaOgonie();
-	this.MCplamaNaOgonie.name = "MCplamaNaOgonie";
-	this.MCplamaNaOgonie.parent = this;
-	this.MCplamaNaOgonie.setTransform(139.7,98.2,1,1,0,0,0,10,10);
-
-	var maskedShapeInstanceList = [this.MCplamaNaOgonie];
-
-	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
-		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
-	}
-
-	this.timeline.addTween(cjs.Tween.get(this.MCplamaNaOgonie).to({x:136.3,y:88.7},10).to({x:128.4,y:78.8},11).to({x:141.4,y:94.9},2).to({x:141.9,y:106.4},1).to({x:138.2,y:86.5},2).to({x:131.6,y:80.7},1).to({x:142.6,y:97.8},2).to({x:141.6,y:106},1).to({x:140.5,y:91.8},2).to({x:128.7,y:81.6},2).to({x:140.9,y:94.3},2).to({x:135.9,y:111.2},2).to({x:140.2,y:94},2).to({x:119.7,y:78},3).to({x:135.8,y:89.6},5).to({x:141.3,y:115.4},7).to({x:139.5,y:98.5},34,cjs.Ease.get(1)).wait(1));
-
-	// ogon
-	this.s
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M320.05 366.48l17.72-29.64h-35.46zm99.21-166H382.4l18.46 30.82zM48 0C21.49 0 0 14.33 0 32v448c0 17.67 21.49 32 48 32s48-14.33 48-32V32C96 14.33 74.51 0 48 0zm172.74 311.5h36.85l-18.46-30.82zm161.71 0h36.86l-18.45-30.8zM128 464h384V48H128zm66.77-278.13a21.22 21.22 0 0 1 18.48-10.71h59.45l29.13-48.71a21.13 21.13 0 0 1 18.22-10.37A20.76 20.76 0 0 1 338 126.29l29.25 48.86h59.52a21.12 21.12 0 0 1 18.1 32L415.63 256 445 305a20.69 20.69 0 0 1 .24 21.12 21.25 21.25 0 0 1-18.48 10.72h-59.47l-29.13 48.7a21.13 21.13 0 0 1-18.16 10.4 20.79 20.79 0 0 1-18-10.22l-29.25-48.88h-59.5a21.11 21.11 0 0 1-18.1-32L224.36 256 195 207a20.7 20.7 0 0 1-.23-21.13zM592 0c-26.51 0-48 14.33-48 32v448c0 17.67 21.49 32 48 32s48-14.33 48-32V32c0-17.67-21.49-32-48-32zM320 145.53l-17.78 29.62h35.46zm-62.45 55h-36.81l18.44 30.8zm29.58 111h65.79L386.09 256l-33.23-55.52h-65.79L253.9 256z"/></svg>
